@@ -11,6 +11,8 @@ console.log('Log-in avvenuto correttamente.');
 function BOMBA(tweet) {
 	// grab ID of tweet to retweet
 	var tweetId = tweet.id_str;
+	var tweetName = tweet.user.name;
+
 
 	if (tweet.user.id == sevengoldenhorses || tweet.user.id == bitconius || tweet.user.id == dbrain || tweet.user.id == doctailor || tweet.user.id == familypoints || tweet.user.id == iconic || tweet.user.id == kora || tweet.user.id == mossland || tweet.user.id == stealthcrypto ) {
 		//funzione Retweetta e metti mi piace
@@ -23,7 +25,7 @@ function BOMBA(tweet) {
 				if (err){
 					console.log('errore');
 				}else{
-					console.log('RT fatto');
+					console.log('RT fatto a '+ tweetName);
 				}
 			});
 			//metti mi piace
@@ -33,7 +35,7 @@ function BOMBA(tweet) {
 				if (err){
 					console.log('errore');
 				}else{
-					console.log('like messo');
+					console.log('LK messo a '+ tweetName);
 				}
 			});
 		};	
@@ -42,11 +44,12 @@ function BOMBA(tweet) {
 		var r = Math.floor(Math.random() * 30) + 1;
 		
 		var rr = r*60000+900000; //r x 1 minuto + 15min
-		
+		var tempoRitardo = rr/60000;
 		//fammi vedere quanto tempo si è creato
-		console.log(r); 
-		console.log(rr);
-			
+		//console.log(r + ' per il RT di '+ tweetName); 
+		//console.log(rr + ' per il RT di '+ tweetName);
+		console.log(tempoRitardo + ' minuti al RT e LK di ' + tweetName );
+					
 		setTimeout(RTF, rr );
 
 	};
@@ -57,7 +60,6 @@ function BOMBA(tweet) {
 //var castellodocet = '726776221';
 //var micheal7878 = '909704040380010501';
 var sevengoldenhorses = '920917613655584768'; //tengo questo account per fare dei test di controllo
-
 var bitconius = '953264830454095872';
 var dbrain = '888326326284890113';
 var doctailor = '944605766404763649';
@@ -70,7 +72,7 @@ var stealthcrypto = '955280820058509312';
 
 
 //parte la connessione con 
-var stream = T.stream('statuses/filter', { follow:  ( ' 920917613655584768, 953264830454095872 , 888326326284890113 , 944605766404763649 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 948119493040943104 , 935520196865019905, 955280820058509312' ) });
+var stream = T.stream('statuses/filter', { follow:  ( ' 920917613655584768 , 953264830454095872 , 888326326284890113 , 944605766404763649 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 948119493040943104 , 935520196865019905 , 955280820058509312 ' ) });
 console.log('Connesisone al utente avvenuta correttamente.');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
