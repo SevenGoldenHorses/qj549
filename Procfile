@@ -1,1 +1,1 @@
-worker: node botff.js
+worker: node bot_micheal7878.js
