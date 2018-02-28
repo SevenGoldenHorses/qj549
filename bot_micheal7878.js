@@ -12,7 +12,7 @@ function BOMBA(tweet) {
 	// grab ID of tweet to retweet
 	var tweetId = tweet.id_str;
 
-	if (tweet.user.id == castellodocet || tweet.user.id == bitconius || tweet.user.id == dbrain || tweet.user.id == doctailor || tweet.user.id == familypoints || tweet.user.id == iconic || tweet.user.id == kora || tweet.user.id == mossland || tweet.user.id == stealthcrypto ) {
+	if (tweet.user.id == sevengoldenhorses || tweet.user.id == bitconius || tweet.user.id == dbrain || tweet.user.id == doctailor || tweet.user.id == familypoints || tweet.user.id == iconic || tweet.user.id == kora || tweet.user.id == mossland || tweet.user.id == stealthcrypto ) {
 		//funzione Retweetta e metti mi piace
 		function RTF(){
 			
