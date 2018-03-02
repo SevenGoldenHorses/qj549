@@ -63,7 +63,9 @@ function BOMBA(tweet) {
 	}; //chiusura IF utente bot
 }; //chiusura di BOMBA
 
-//insert ID user account da seguire (esempio MorpheusNetwork, Vestarin). 
+//insert ID user account da seguire (esempio MorpheusNetwork, Vestarin).
+var federicodigesu = '174606919';
+//----- 
 var bitconius = '953264830454095872';
 var dbrain = '888326326284890113';
 var doctailor = '944605766404763649';
@@ -83,7 +85,7 @@ var medichainonline = '754008453979439105';
 
 
 //parte la connessione con 
-var stream = T.stream('statuses/filter', { follow:  ( ' 953264830454095872 , 888326326284890113 , 944605766404763649 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 935520196865019905, 948119493040943104 ,   , 955280820058509312, 900442763598192641 , 3731754254 , 943369448035049472 ,  887638060116082688 , 928665122645692416 , 754008453979439105 ' ) });
+var stream = T.stream('statuses/filter', { follow:  ( ' 174606919, 953264830454095872 , 888326326284890113 , 944605766404763649 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 935520196865019905, 948119493040943104 ,   , 955280820058509312, 900442763598192641 , 3731754254 , 943369448035049472 ,  887638060116082688 , 928665122645692416 , 754008453979439105 ' ) });
 console.log('Connesisone al utente avvenuta correttamente.');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
