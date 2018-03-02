@@ -48,10 +48,10 @@ function BOMBA(tweet) {
 			}; //fine funzione RTF
 
 			//creo un nemro casuale da moltiplicare per fare il ritardo in millisecondi
-			var r = Math.floor(Math.random() * 10) + 1;
-			var rr = r*1000; //r x 1 secondo
-			var tempoRitardo = rr/1000;
-			console.log(tempoRitardo + ' secondo/i al RT e LK di ' + tweetName );
+			var r = Math.floor(Math.random() * 4) + 1;
+			var rr = r*600000 + 30*60000; //r x 1 secondo
+			var tempoRitardo = rr/60000;
+			console.log(tempoRitardo + ' minuto/i al RT e LK di ' + tweetName );
 			//faccio partire la funzione con ritardo
 			setTimeout(RTF, rr );
 		}else{
