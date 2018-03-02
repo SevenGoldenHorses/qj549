@@ -16,7 +16,7 @@ console.log('Log-in avvenuto correttamente.');
 function BOMBA(tweet) {
 	// grab ID of tweet to retweet
 	var tweetId = tweet.id_str;
-	var tweetName = tweet.user.name;
+	var tweetName = tweet.user.screen_name;
 	var testoTweet = tweet.text;
 	var inRisposta = tweet.in_reply_to_status_id_str;
 	console.log(testoTweet);
