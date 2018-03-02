@@ -30,36 +30,35 @@ function BOMBA(tweet) {
 				T.post('statuses/retweet/:id', { id: tweetId }, function (err, data, response) {
 					
 					if (err){
-						console.log('Errore.');
+						console.log('Errore.\n');
 					}else{
-						console.log('RT fatto a '+ tweetName);
+						console.log('RT fatto a '+ tweetName+'\n');
 					}			
 				});
 				//metti mi piace
 				T.post('favorites/create', { id: tweetId }, function (err, data, response) {
 					if (err){
-						console.log('errore');
+						console.log('errore\n');
 					}else{
-						console.log('LK messo a '+ tweetName);
+						console.log('LK messo a '+ tweetName+'\n');
 					}
 				});
 				//scrivi report
 				logger.write('https://twitter.com/castellodocet/status/'+ tweet.id_str + ' creato il ' + tweet.created_at + "\n");
-				console.log('Report fatto.');
+				console.log('Report fatto.\n');
 			}; //fine funzione RTF
 
 			//creo un nemro casuale da moltiplicare per fare il ritardo in millisecondi
-			var r = Math.floor(Math.random() * 4) + 1;
-			var rr = r*600000 + 30*60000; //r x 1 secondo
-			var tempoRitardo = rr/60000;
-			console.log(tempoRitardo + ' minuto/i al RT e LK di ' + tweetName );
+			var r = Math.round((Math.random() * 4 + 1) *600000 + 30*60000); //r = Math.floor(Math.random() * 4) + 1;
+			var tempoRitardo = Math.round(r/60000);
+			console.log(tempoRitardo + ' minuti al RT e LK di ' + tweetName + '\n' );
 			//faccio partire la funzione con ritardo
-			setTimeout(RTF, rr );
+			setTimeout(RTF, r );
 		}else{
-		 	console.log('E\' un RT o un commento. Non lo retwitto.');
+		 	console.log('E\' un RT o un commento. Non lo retwitto.\n');
 		}; //chiusura IF RT o COMMENTO
 	}else{
-		console.log('E\' un RT del BOT. Non fare niente.' );
+		console.log('E\' un RT del BOT. Non fare niente.\n');
 	}; //chiusura IF utente bot
 }; //chiusura di BOMBA
 
@@ -86,7 +85,7 @@ var medichainonline = '754008453979439105';
 
 //parte la connessione con 
 var stream = T.stream('statuses/filter', { follow:  ( ' 174606919, 953264830454095872 , 888326326284890113 , 944605766404763649 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 935520196865019905, 948119493040943104 ,   , 955280820058509312, 900442763598192641 , 3731754254 , 943369448035049472 ,  887638060116082688 , 928665122645692416 , 754008453979439105 ' ) });
-console.log('Connesisone al utente avvenuta correttamente.');
+console.log('Connesisone al utente avvenuta correttamente.\n');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
 
