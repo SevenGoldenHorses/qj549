@@ -18,7 +18,7 @@ function BOMBA(tweet) {
 	var tweetId = tweet.id_str;
 	var tweetName = tweet.user.screen_name;
 	var testoTweet = tweet.text;
-	var inRisposta = tweet.in_reply_to_status_id_str;
+	var inRisposta = tweet.in_reply_to_user_id_str;//tweet.in_reply_to_status_id_str;
 	console.log(testoTweet);
 
 	if ( tweet.user.screen_name !== 'Micheal7878' ) { 	
