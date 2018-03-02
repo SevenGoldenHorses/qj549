@@ -24,6 +24,7 @@ function BOMBA(tweet) {
 	if ( tweet.user.screen_name !== 'Micheal7878' ) { 	
 		if( testoTweet.includes('RT ') == false && inRisposta === null ){
 			// Fai la funzione Retweetta e metti mi piace
+			console.log(tweet);
 			function RTF(){
 				// fai retweet
 				T.post('statuses/retweet/:id', { id: tweetId }, function (err, data, response) {
