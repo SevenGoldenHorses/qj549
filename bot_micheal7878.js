@@ -44,7 +44,7 @@ function BOMBA(tweet) {
 					}
 				});
 				//scrivi report
-				logger.write('https://twitter.com/castellodocet/status/'+ tweet.id_str + ' creato il ' + tweet.created_at + "\n");
+				logger.write('https://twitter.com/'+tweetName+'/status/'+ tweet.id_str + ' creato il ' + tweet.created_at + "\n");
 				console.log('Report fatto.\n');
 			}; //fine funzione RTF
 
