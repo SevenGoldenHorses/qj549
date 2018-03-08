@@ -22,7 +22,7 @@ function BOMBA(tweet) {
 	console.log(testoTweet);
 
 	if ( tweet.user.screen_name !== 'Micheal7878' ) { 	
-		if( testoTweet.includes('RT ') == false && inRisposta === null ){
+		if( testoTweet.includes('RT ') == false && inRisposta === null || testoTweet.includes('RT @'+tweet.user.screen_name) == true && inRisposta === null){
 			// Fai la funzione Retweetta e metti mi piace
 			console.log(tweet);
 			function RTF(){
