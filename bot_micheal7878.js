@@ -49,7 +49,7 @@ function BOMBA(tweet) {
 			}; //fine funzione RTF
 
 			//creo un nemro casuale da moltiplicare per fare il ritardo in millisecondi
-			var r = Math.round((Math.random() * 4 + 1) *600000 + 30*60000); //r = Math.floor(Math.random() * 4) + 1;
+			var r = Math.round((Math.random() * 4 + 1) *600000 + 40*60000); //r = Math.floor(Math.random() * 4) + 1;
 			var tempoRitardo = Math.round(r/60000);
 			console.log(tempoRitardo + ' minuti al RT e LK di ' + tweetName + '\n' );
 			//faccio partire la funzione con ritardo
@@ -125,3 +125,4 @@ var stream = T.stream('statuses/filter', { follow:  ( ' 930320920861745153 , 931
 console.log('Connesisone al utente avvenuta correttamente.\n');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
+
